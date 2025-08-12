@@ -5,7 +5,7 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler ,  LabelEncoder, OneHotEncoder
 import pickle
 ## streamlit app
-st.title('Customer Churn PRediction')
+st.title('Customer Churn Prediction')
 ## load the trained 
 
 model = tf.keras.models.load_model("../model.h5")
@@ -57,7 +57,7 @@ prediction = model.predict(input_data_scaled)
 prediction_prob = prediction[0][0]
 
 
-st.write(f'churn Probabil:{prediction_prob:.2f}')
+st.write(f'churn Probability:{prediction_prob:.2f}')
 if prediction_prob>0.5:
     st.write("The customer is likely to churn")
 else:
